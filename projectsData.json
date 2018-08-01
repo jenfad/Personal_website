@@ -1,0 +1,38 @@
+let projectsData = {
+  "reaction": {
+    "id": 1,
+    "name": "Reaction Tester",
+    "imgsrc": "images/Dahomey.JPEG",
+    "description": "Test your reaction speed by clicking on the shapes that appear as quikly as possible",
+    "tags": "\"Frontend, Web Development, JavaScript, CSS, HTML",
+    "link": "Reaction-Tester.html",
+    "featured": true
+  },
+  "tribute": {
+    "id": 2,
+    "name": "Dahomey Warriors Tribute Page",
+    "imgsrc":,
+    "description": "A very simple tribute page for a freecodecamp assignment",
+    "tags": "Frontend, Web Development, CSS, HTML",
+    "link": "https://codepen.io/jenfad/pen/aKKyxY",
+    "featured": true
+  },
+  "self": {
+    "id": 3,
+    "name": "Personal Website",
+    "imgsrc":,
+    "description": "This site... inception",
+    "tags": "Frontend, Web Development, React, Bootstrap, CSS, HTML",
+    "link": "https://codepen.io/jenfad/pen/aKKyxY",
+    "featured": true
+  },
+  "NYCSchools": {
+    "id": 4,
+    "name": "Analyzing NYC High School Data",
+    "imgsrc":"images/NYCSchools",
+    "description": "Analyzing high school data by cleaning datasets, finding correlations and plotting",
+    "tags": "Data Analytics, Data Visualization, Python, Pandas, matplotlib.pyplot, Basemap",
+    "link": "https://github.com/jenfad/Cleaning_Analyzing_NYC_SAT/blob/master/Schools.ipynb",
+    "featured": true
+  }
+}

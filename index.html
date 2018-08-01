@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="base.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-expand-sm navbar-dark bg-dark navbar-custom" id="top-menu">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="challenge.html">Code Challenge</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/jenfad">GitHub</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/jenniferfadimba/">LinkedIn</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#">Other Links</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Code Pen</a>
+                        <a class="dropdown-item" href="#">Tableau</a>
+                        <a class="dropdown-item" href="#">Rpubs</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" id="begin">
+        <p id="topics">Web Development and Data Analytics</p>
+    </div>
+    <div class="container" id="featured">
+        <h1>Featured Projects</h1>
+    </div>
+    <div id="root">
+
+    </div>
+    <div class="container"><h4><a href="projects.html">More Projects</a></h4></div>
+   
+
+    <script src="index.js"></script>
+
+
+    
+
+    <script type="text/javascript" src="projectsData.json"></script>
+    
+    <!--react and babel-->
+    <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+    <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+    <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+    <script type="text/babel">
+        const rootElement = document.getElementById('root')
+
+        class Projects extends React.Component {
+        state = { projectsData: [
+        {
+        "id": 1,
+        "name": "Reaction Tester",
+        "imgsrc": "images/reactionTester.JPG",
+        "description": "Test your reaction speed by clicking on the shapes that appear as quikly as possible",
+        "tags": "Frontend, Web Development, JavaScript, CSS, HTML",
+        "link": "Reaction-Tester.html",
+        "featured": true
+        },
+        {
+        "id": 2,
+        "name": "Dahomey Warriors Tribute Page",
+        "imgsrc": "images/Dahomey.JPG",
+        "description": "A very simple tribute page for a freecodecamp assignment",
+        "tags": "Frontend, Web Development, CSS, HTML",
+        "link": "https://codepen.io/jenfad/pen/aKKyxY",
+        "featured": false
+        },
+        {
+        "id": 3,
+        "name": "Personal Website",
+        "imgsrc": "images/personalSite.JPG",
+        "description": "This site... inception",
+        "tags": "Frontend, Web Development, React, Bootstrap, CSS, HTML",
+        "link": "#",
+        "featured": true
+        },
+        {
+        "id": 4,
+        "name": "Analyzing NYC High School Data",
+        "imgsrc":"images/NYCSchool.JPG",
+        "description": "Analyzing high school data by cleaning datasets, finding correlations and plotting",
+        "tags": "Data Analytics, Data Visualization, Python, Pandas, matplotlib.pyplot, Basemap",
+        "link": "https://github.com/jenfad/Cleaning_Analyzing_NYC_SAT/blob/master/Schools.ipynb",
+        "featured": true
+        }
+        ] }
+
+        //making the project div a container helps contain the images down;
+        render() {
+        return (
+        <div className="Projects">
+
+            <ul>
+                { this.state.projectsData.filter(project => project.featured === true).map(project =>
+                <div className="project container">
+                    <div className ="projectHeader">
+                        <h2><a href={project.link}> { project.name }</a></h2>
+                    </div>
+                    <img src={ project.imgsrc } />
+                    <p className="Description">{project.description}</p>
+                    <p className ="tags">{project.tags}</p>
+                </div>)
+                }
+            </ul>
+        </div>
+        );
+        }
+        }
+
+        class App extends React.Component {
+        constructor(props) {
+        super(props);
+
+        }
+
+        render(){
+        return(
+        <div>
+            <Projects />
+        </div>
+        )
+        }
+        }
+
+
+
+        ReactDOM.render(
+        <App />,
+        rootElement
+        )
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+#begin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 300px;
+    background-size: cover;
+    background-image: url(images/laptopOutside.JPEG);
+}
+
+#topics {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+#featured {
+    margin-top: 0.5em;
+    background-color: olivedrab;
+    color: darkgray;
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+    margin-top: 1%;
+}
+#selection {
+    margin-left: 1%;
+    background-color: black;
+    color: darkgray;
+    padding: 2em;
+}
+.project a {
+    color: black;
+    
+}
+.projectHeader {
+    text-align: center;
+    width: 100%;
+    border-bottom: 0.1em solid olivedrab;
+    margin-bottom: 0.3em;
+    
+}
+
+img {
+    width: inherit;
+    border: 0.2em solid olivedrab;
+}
+
+.tags {
+    font-style: italic;
+    color: olivedrab;
+}

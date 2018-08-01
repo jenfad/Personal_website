@@ -1,0 +1,6 @@
+wireframed first just to get an idea of layout
+will need to move any css or javascript to separate files
+save images within an image folder in project folder, edit in ph
+laptop image src:  https://images.pexels.com/photos/196660/pexels-photo-196660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+use bootstrap for nav? and download it to main website hosting folder..
+had to make div directly containing images to be container bootstrap class for width: inherit to work as I want
