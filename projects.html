@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Home</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -14,23 +14,22 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-default navbar-expand-sm navbar-dark bg-dark navbar-custom" id="top-menu">
+    <nav class="navbar navbar-default navbar-expand-sm navbar-dark navbar-custom" style="background-color: olivedrab" id="top-menu">
         <a class="navbar-brand" href="index.html">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="challenge.html">Code Challenge</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://github.com/jenfad">GitHub</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/jenniferfadimba/">LinkedIn</a></li>
+                <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/jenfad" target="_blank">GitHub</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/jenniferfadimba/" target="_blank">LinkedIn</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#">Other Links</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" href="#">Other Links</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Code Pen</a>
-                        <a class="dropdown-item" href="#">Tableau</a>
-                        <a class="dropdown-item" href="#">Rpubs</a>
+                        <a class="dropdown-item" href="https://public.tableau.com/profile/jennifer.fadimba#!/" target="_blank">Tableau</a>
+                        <a class="dropdown-item" href="http://rpubs.com/jenfad19" target="_blank">Rpubs</a>
+                      	<a class="dropdown-item" href="https://codepen.io/jenfad/" target="_blank">Code Pen</a>
                     </div>
                 </li>
             </ul>
@@ -41,10 +40,14 @@
     <div  class ="flex">
         <div id="selection">
             <h3>Type</h3>
+          	<br/>
             <form>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="WebDevelopment">
                     <label class="form-check-label" for="WebDevelopment">Web Development</label>
+                    <br/>
+                  	<input type="checkbox" class="form-check-input" id="Full-">
+                    <label class="form-check-label" for="WebDevelopment">Full-stack</label>
                     <br/>
                     <input type="checkbox" class="form-check-input" id="Frontend">
                     <label class="form-check-label" for="Frontend">Frontend</label>
@@ -56,7 +59,8 @@
                     <label class="form-check-label" for="DataAnalytics">Data Analytics</label>
                     <br/>
                 </div>
-                <button type="submit" class="btn">Select [coming soon]</button>
+              	<br/>
+                <button type="submit" class="btn">Filter [coming soon]</button>
             </form>
         </div>
         <div id="root">
@@ -80,93 +84,71 @@
     <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 
     <script type="text/babel">
-        const rootElement = document.getElementById('root')
+        const rootElement = document.getElementById('root');
 
-        class Projects extends React.Component {
-        state = { projectsData: [
-        {
-        "id": 1,
-        "name": "Reaction Tester",
-        "imgsrc": "images/reactionTester.JPG",
-        "description": "Test your reaction speed by clicking on the shapes that appear as quikly as possible",
-        "tags": "Frontend, Web Development, JavaScript, CSS, HTML",
-        "link": "Reaction-Tester.html",
-        "featured": true
-        },
-        {
-        "id": 2,
-        "name": "Dahomey Warriors Tribute Page",
-        "imgsrc": "images/Dahomey.JPG",
-        "description": "A very simple tribute page for a freecodecamp assignment",
-        "tags": "Frontend, Web Development, CSS, HTML",
-        "link": "https://codepen.io/jenfad/pen/aKKyxY",
-        "featured": false
-        },
-        {
-        "id": 3,
-        "name": "Personal Website",
-        "imgsrc": "images/personalSite.JPG",
-        "description": "This site... inception",
-        "tags": "Frontend, Web Development, React, Bootstrap, CSS, HTML",
-        "link": "#",
-        "featured": true
-        },
-        {
-        "id": 4,
-        "name": "Analyzing NYC High School Data",
-        "imgsrc":"images/NYCSchool.JPG",
-        "description": "Analyzing high school data by cleaning datasets, finding correlations and plotting",
-        "tags": "Data Analytics, Data Visualization, Python, Pandas, matplotlib.pyplot, Basemap",
-        "link": "https://github.com/jenfad/Cleaning_Analyzing_NYC_SAT/blob/master/Schools.ipynb",
-        "featured": true
-        }
-        ] }
+        var request = new XMLHttpRequest();
+        request.open('GET', "projectsData.json");
+        //getting data from json file in same folder doesn't work locally in Chrome, but does in Edge
+        //pictures saved as 'JPG' locally but 'jpg' on hosting servie
+        request.onload = function(){
+            var data = JSON.parse(request.responseText);
 
-        //added extra div for project to eventually figure out how to grid/flex;
-        render() {
-        return (
-        <div className="Projects">
 
-            <ul>
-                { this.state.projectsData.map(project =>
-                <div className="project">
-                    <div class="container">
-                        <div className="projectHeader">
-                            <h3><a href={project.link}> { project.name }</a></h3>
-                        </div>
-                        <img src={ project.imgsrc } />
-                        <p className="Description">{project.description}</p>
-                        <p className="tags">{project.tags}</p>
+            class Projects extends React.Component {
+                state = data;
+
+                //making the project div a container helps contain the images down;
+                render() {
+                    return (
+                    <div className="ProjectsFlex">
+
+                        { this.state.projectsData.map(project =>
+                        <div className="project">
+                            <div className="container">
+                                <a href={project.link} target="_blank">
+                                    <div className="projectHeader">
+                                        <h2>{ project.name }</h2>
+                                    </div>
+                                </a>
+                                <img src={ project.imgsrc } />
+                                <p className="Description">{project.description}</p>
+                                <p className="tags">{project.tags}</p>
+                            </div>
+                        </div>)
+                        }
+
                     </div>
-                </div>)
+                    );
                 }
-            </ul>
-        </div>
-        );
+            }
+
+            class App extends React.Component {
+                constructor(props) {
+                super(props);
+
+                }
+
+                render(){
+                    return(
+                    <div>
+                        <Projects />
+                    </div>
+                    )
+                }
+            }
+
+
+
+            ReactDOM.render(
+                <App />,
+                rootElement
+            )
         }
+
+        request.onerror = function(){
+        	rootElement.innerHTML = "Sorry! Looks like the projects failed to load";
         }
-
-        class App extends React.Component {
-        constructor(props) {
-        super(props);
-
-        }
-
-        render(){
-        return(
-        <div>
-            <Projects />
-        </div>
-        )
-        }
-        }
-
-
-
-        ReactDOM.render(
-        <App />,
-        rootElement
-        )
+        request.send();
     </script>
 </body>
 </html>

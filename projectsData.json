@@ -1,38 +1,56 @@
-let projectsData = {
-  "reaction": {
-    "id": 1,
-    "name": "Reaction Tester",
-    "imgsrc": "images/Dahomey.JPEG",
-    "description": "Test your reaction speed by clicking on the shapes that appear as quikly as possible",
-    "tags": "\"Frontend, Web Development, JavaScript, CSS, HTML",
-    "link": "Reaction-Tester.html",
-    "featured": true
+{"projectsData": [
+  {
+  "id": 2,
+  "name": "Company CRUD App",
+  "imgsrc": "images/Company_CRUD.jpg",
+  "description": "Create, Read, Delete or Update comapanies and see more information by clicking on each",
+  "tags": "Full-stack, Backend, Frontend, Web Development, Django, Python, Faker, Bootstrap, CSS, HTML",
+  "link": "http://jenfad.pythonanywhere.com/",
+  "featured": true
   },
-  "tribute": {
-    "id": 2,
-    "name": "Dahomey Warriors Tribute Page",
-    "imgsrc":,
-    "description": "A very simple tribute page for a freecodecamp assignment",
-    "tags": "Frontend, Web Development, CSS, HTML",
-    "link": "https://codepen.io/jenfad/pen/aKKyxY",
-    "featured": true
+  {
+  "id": 1,
+  "name": "Daily Mood Tracker",
+  "imgsrc": "images/moodTracker.jpg",
+  "description": "Under Progress (link not active):  users report their various moods and intensity of each and will be able to see visualizations relating to mood patterns",
+  "tags": "Full-stack, Backend, Frontend, Web Development, Django, Python, Bootstrap, CSS, HTML",
+  "link": "#",
+  "featured": true
   },
-  "self": {
-    "id": 3,
-    "name": "Personal Website",
-    "imgsrc":,
-    "description": "This site... inception",
-    "tags": "Frontend, Web Development, React, Bootstrap, CSS, HTML",
-    "link": "https://codepen.io/jenfad/pen/aKKyxY",
-    "featured": true
+  {
+  "id": 3,
+  "name": "Reaction Tester",
+  "imgsrc": "images/reactionTester.jpg",
+  "description": "Test your reaction speed by clicking on the shapes that appear as quikly as possible",
+  "tags": "Frontend, Web Development, JavaScript, CSS, HTML",
+  "link": "Reaction-Tester.html",
+  "featured": true
   },
-  "NYCSchools": {
-    "id": 4,
-    "name": "Analyzing NYC High School Data",
-    "imgsrc":"images/NYCSchools",
-    "description": "Analyzing high school data by cleaning datasets, finding correlations and plotting",
-    "tags": "Data Analytics, Data Visualization, Python, Pandas, matplotlib.pyplot, Basemap",
-    "link": "https://github.com/jenfad/Cleaning_Analyzing_NYC_SAT/blob/master/Schools.ipynb",
-    "featured": true
+  {
+  "id": 4,
+  "name": "Personal Website",
+  "imgsrc": "images/personalSite.jpg",
+  "description": "This site... inception",
+  "tags": "Frontend, Web Development, React, Bootstrap, CSS, HTML",
+  "link": "#",
+  "featured": true
+  },
+  {
+  "id": 5,
+  "name": "Analyzing NYC High School Data",
+  "imgsrc":"images/NYCSchool.jpg",
+  "description": "Analyzing high school data by cleaning datasets, finding correlations and plotting",
+  "tags": "Data Analytics, Data Visualization, Python, Pandas, matplotlib.pyplot, Basemap",
+  "link": "https://github.com/jenfad/Cleaning_Analyzing_NYC_SAT/blob/master/Schools.ipynb",
+  "featured": true
+  },
+  {
+  "id": 6,
+  "name": "Dahomey Warriors Tribute Page",
+  "imgsrc": "images/Dahomey.jpg",
+  "description": "A very simple tribute page for a freecodecamp assignment",
+  "tags": "Frontend, Web Development, CSS, HTML",
+  "link": "https://codepen.io/jenfad/pen/aKKyxY",
+  "featured": false
   }
-}
+ ] }
