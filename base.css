@@ -18,7 +18,7 @@
 #featured {
     margin-top: 0.5em;
     background-color: olivedrab;
-    color: darkgray;
+    color: #ccc;
     height: 100%;
 }
 
@@ -29,7 +29,7 @@
 #selection {
     margin-left: 1%;
     background-color: olivedrab;
-    color: darkgray;
+    color: #ccc;
     padding: 2em;
 }
 .ProjectsFlex {
@@ -44,6 +44,10 @@
     color: black;
     
 }
+.project a:hover {
+    text-decoration: none;
+}
+
 .projectHeader {
     text-align: center;
     width: 100%;
@@ -52,8 +56,16 @@
     
 }
 
-.projectHeader:hover { 
+.projectHeader:hover {
     background-color: rgba(107, 132, 35, 0.4);
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0, .2);
+}
+
+.projectHeader:actve, .projectHeader:focus {
+    /*background-color: rgba(107, 132, 35, 0.4);*/
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 2rem rgba(0,0,0, .2);
 }
 
 img {
